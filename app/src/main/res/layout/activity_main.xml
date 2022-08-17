@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/nomeLabel"
+        android:id="@+id/nomeLabelTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/nome_completo"
@@ -23,7 +23,9 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/nomeLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeLabelTv"
+        android:hint="@string/name_example"
+        />
 
     <TextView
         android:id="@+id/telefoneLabelTv"
@@ -41,7 +43,8 @@
         android:inputType="text"
         android:minHeight="48dp"
         android:text="@string/telefoneGuide"
-        app:layout_constraintTop_toBottomOf="@+id/telefoneLabelTv" />
+        app:layout_constraintTop_toBottomOf="@+id/telefoneLabelTv"
+        />
 
     <TextView
         android:id="@+id/emailLabTv"
@@ -59,7 +62,8 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/emailLabTv" />
+        app:layout_constraintTop_toBottomOf="@+id/emailLabTv"
+        android:hint="@string/email_example"/>
 
     <CheckBox
         android:id="@+id/emailListCb"
@@ -68,13 +72,95 @@
         android:text="@string/checkBox_label"
         app:layout_constraintTop_toBottomOf="@+id/editEmailEt" />
 
-    <RadioGroup
+    <TextView
+        android:id="@+id/SexLabTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/emailListCb"
+        android:textColor="@color/black"
+        android:text="@string/sexo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailListCb" />
 
-        />
+    <RadioGroup
+        android:id="@+id/SexRg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/SexLabTv"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/mascRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/masculino"
+            />
+        <RadioButton
+            android:id="@+id/femRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/feminino"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/cityLabTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/cidade_label"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SexRg" />
 
+    <EditText
+        android:id="@+id/editCityEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/cityLabTv"
+        android:hint="@string/city_hint"/>
+
+    <TextView
+        android:id="@+id/uFLabTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/uf_label"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCityEt" />
+
+    <Spinner
+        android:id="@+id/uFSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:entries="@array/lista_uf"
+        android:contentDescription="@string/select_your_uf"
+        app:layout_constraintTop_toBottomOf="@+id/uFLabTv"/>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/uFSp">
+
+        <Button
+            android:id="@+id/buttonClean"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/limpar" />
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/salvar">
+        </Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
