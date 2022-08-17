@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cadastro</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="telefone">Telefone</string>
+    <string name="telefoneGuide">ex:12-93456-7890</string>
+    <string name="e_mail">E-mail</string>
+    <string name="checkBox_label">Ingressar na lista de E-mails?</string>
+</resources>
