@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String  estado      = ((TextView) this.uFSp.getSelectedView()).getText().toString();
 
             Formulario formulario = new Formulario(nome, telefone, email, listaEmails, sexoMasc, sexoFem, cidade, estado);
+            String verificador = isEmpty(formulario);
+
+            if(verificador.equals("")) {
+                Toast.makeText(this, formulario.toString(), Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(this, verificador, Toast.LENGTH_LONG).show();
+            }
         }
         else{
             editNomeEt.getText().clear();
@@ -73,5 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editCityEt.getText().clear();
             uFSp.setSelection(0);
         }
+        private String isEmpty(Formulario formulario) {
+        StringBuilder aviso = new StringBuilder();
+        if (formulario.getNome().equals("") || (formulario.getTelefone().equals("")) || (formulario.getEmail().equals(""))){
+            aviso.append("Os campos Nome, Telefone e Email são obrigatórios!");
+        }
+        return aviso.toString();
     }
 }
